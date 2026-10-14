@@ -1,0 +1,34 @@
+name: ROS 2 parts (course containers)
+# Builds each course's ROS 2 container from its Dockerfile (as students do) and runs the handouts' ROS 2 steps in it.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  ros2:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - {course: '361', repo: sbeg361-labs}
+        - {course: '461', repo: sbeg461-labs}
+        - {course: 46X, repo: sbeg46x-labs}
+    name: ros2 (${{ matrix.repo }})
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Decrypt the solutions (repository secret; never printed)
+      env:
+        SOLUTIONS_KEY: ${{ secrets.SOLUTIONS_KEY }}
+      run: |
+        if [ -z "$SOLUTIONS_KEY" ]; then echo "SOLUTIONS_KEY secret not available"; exit 1; fi
+        printf '%s' "$SOLUTIONS_KEY" > "$RUNNER_TEMP/k"
+        openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in solutions.tar.gz.enc -pass "file:$RUNNER_TEMP/k" | tar xz
+        rm -f "$RUNNER_TEMP/k"
+    - name: Build the course ROS 2 container (docker/ros2/Dockerfile)
+      run: docker build --progress=plain -t course-ros2 -f ${{ matrix.repo }}/docker/ros2/Dockerfile ${{ matrix.repo }}
+    - name: ROS 2 steps of the handouts, inside the container
+      run: |
+        docker run --rm -v "$PWD":/w -w /w -e PUBLIC_LOGS=1 course-ros2           bash -c "source /opt/ros/jazzy/setup.bash && python3 ci/ros2_checks.py ${{ matrix.course }}"

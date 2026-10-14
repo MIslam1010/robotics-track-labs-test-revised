@@ -192,7 +192,11 @@ def pid_run(tag, lab, pid_cmd, env=None):
     vals = np.array([[float(x) for x in r[-9:]] for r in rows]) if rows else np.zeros((0, 9))
     check(f"{tag}: /pid_debug CSV rows [t,qd,q,e,tau,P,I,D,sat]", len(vals) > 100 and np.isfinite(vals).all(), f"{len(vals)} rows")
     e_before = float(np.abs(vals[-50:, 3]).mean()) if len(vals) >= 50 else float("nan")
-    rc, out = run("ros2 param set /joint_pid ki 38.5", timeout=30)
+    out = ""
+    for _ in range(4):  # the ros2 CLI can need a few seconds to discover the node: retry
+        rc, out = run("ros2 param set /joint_pid ki 38.5", timeout=30)
+        if "successful" in out.lower(): break
+        time.sleep(3)
     check(f"{tag}: run-time gain change 'ros2 param set /joint_pid ki 38.5'", "successful" in out.lower(), out.strip()[-80:])
     time.sleep(6)
     rc, out = run("timeout 3 ros2 topic echo /pid_debug --csv", timeout=10)

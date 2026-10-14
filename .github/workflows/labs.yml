@@ -1,0 +1,93 @@
+name: labs on all systems
+# Public repository: runs only on pushes to main by the owner and on manual dispatch (secrets are never given to forks).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['.github/workflows/ros2.yml', 'ci/ros2_checks.py', '*/docker/**', '*/.devcontainer/**']
+permissions:
+  contents: read
+env:
+  PUBLIC_LOGS: '1'
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        course: [sbeg361-labs, sbeg461-labs, sbeg46x-labs]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Decrypt the solutions (repository secret; never printed)
+      env:
+        SOLUTIONS_KEY: ${{ secrets.SOLUTIONS_KEY }}
+      run: |
+        if [ -z "$SOLUTIONS_KEY" ]; then echo "SOLUTIONS_KEY secret not available"; exit 1; fi
+        printf '%s' "$SOLUTIONS_KEY" > "$RUNNER_TEMP/k"
+        openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in solutions.tar.gz.enc -pass "file:$RUNNER_TEMP/k" | tar xz
+        rm -f "$RUNNER_TEMP/k"
+    - name: Set up conda (environment.yml, the documented Windows route)
+      if: runner.os == 'Windows'
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        miniforge-version: latest
+        environment-file: ${{ matrix.course }}/environment.yml
+        activate-environment: ${{ matrix.course }}
+    - name: Set up Python + pip (setup.sh route)
+      if: runner.os != 'Windows'
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install (pip)
+      if: runner.os != 'Windows'
+      working-directory: ${{ matrix.course }}
+      run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python -m pip install -e library
+    - name: Package versions
+      run: python -c "import numpy, scipy, matplotlib; print('numpy', numpy.__version__, '| scipy', scipy.__version__, '| matplotlib', matplotlib.__version__)"
+    - name: All labs (starter fails cleanly, solution passes) - scores only
+      run: python ci/run_all.py ${{ matrix.course }}
+  cpp:
+    strategy:
+      fail-fast: false
+      matrix:
+        course: [sbeg361-labs, sbeg461-labs, sbeg46x-labs]
+        target:
+        - {os: ubuntu-latest, route: gcc}
+        - {os: macos-latest, route: apple-clang}
+        - {os: windows-latest, route: msvc-visual-studio-generator}
+        include:
+        - course: sbeg361-labs
+          target: {os: windows-latest, route: msvc-ninja-native-tools-prompt}
+    name: cpp (${{ matrix.target.route }}, ${{ matrix.course }})
+    runs-on: ${{ matrix.target.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - uses: actions/checkout@v4
+    - name: Decrypt the solutions (repository secret; never printed)
+      env:
+        SOLUTIONS_KEY: ${{ secrets.SOLUTIONS_KEY }}
+      run: |
+        if [ -z "$SOLUTIONS_KEY" ]; then echo "SOLUTIONS_KEY secret not available"; exit 1; fi
+        printf '%s' "$SOLUTIONS_KEY" > "$RUNNER_TEMP/k"
+        openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in solutions.tar.gz.enc -pass "file:$RUNNER_TEMP/k" | tar xz
+        rm -f "$RUNNER_TEMP/k"
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: CMake + Ninja from requirements.txt (as students install them)
+      run: python -m pip install --upgrade pip && python -m pip install $(grep -E '^(cmake|ninja)==' ${{ matrix.course }}/requirements.txt)
+    - name: x64 Native Tools environment (cl on PATH)
+      if: matrix.target.route == 'msvc-ninja-native-tools-prompt'
+      uses: ilammy/msvc-dev-cmd@v1
+    - name: Which compiler and generator CMake uses (no lab code)
+      run: |
+        cmake --version | head -1
+        cmake -S cpp_support/tests -B probe 2>&1 | grep -E "Building for|CXX compiler identification" || true
+    - name: All C++ labs (starter builds and fails cleanly, solution passes) - scores only
+      run: python ci/run_all.py ${{ matrix.course }} --cpp

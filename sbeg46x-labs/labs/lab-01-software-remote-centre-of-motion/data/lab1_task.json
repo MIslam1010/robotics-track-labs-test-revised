@@ -1,0 +1,14 @@
+{
+  "_comment": "SBEG 46X Lab 1 task: course arm + 0.12 m teaching laparoscope (illustrative values). Units: m, rad, s. Port frame {p}: origin at the port, z_p = initial shaft direction (straight down here), x_p horizontal.",
+  "p_port": [0.15, 0.08, 0.05],
+  "theta0": [0.10778, 0.367162, -2.148182, 0.210223, -1.570796, -1.463016],
+  "path": [
+    {"type": "line", "to": [0.0, 0.0, 0.05], "T": 2.0, "_note": "insert from 30 mm to 50 mm beyond the port"},
+    {"type": "line", "to": [0.01, 0.0, 0.05], "T": 1.5, "_note": "move 10 mm sideways inside the patient"},
+    {"type": "circle", "radius": 0.01, "turns": 1, "T": 6.0, "_note": "one 10 mm-radius circle (inspection sweep)"},
+    {"type": "line", "to": [0.0, 0.0, 0.03], "T": 2.5, "_note": "return and retract to 30 mm"}
+  ],
+  "dt": 0.005,
+  "gains": {"kp": 5.0, "k_rcm": 10.0, "lam": 0.0},
+  "acceptance": {"max_tip_error_mm": 0.5, "max_rcm_error_mm": 0.5}
+}

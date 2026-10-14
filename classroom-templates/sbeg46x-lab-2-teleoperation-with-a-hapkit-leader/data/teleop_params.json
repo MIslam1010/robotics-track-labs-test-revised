@@ -1,0 +1,22 @@
+{
+  "_note": "SBEG 46X Lab 2 parameters. ILLUSTRATIVE VALUES (not product, patient or soldier data). SI units.",
+  "dt": 0.001,
+  "substeps": 10,
+  "force_max": 2.0,
+  "x_range": 0.040,
+  "leader": {"m": 0.0570, "b": 0.15, "_m": "= hapkit_effective_mass() rounded to 0.1 g (Part A1)", "_b": "Hapkit physical damping, SBEG 461 Lab 8 / 46X project value"},
+  "follower": {"m": 0.0570, "b": 0.10, "_m": "simulated follower (second Hapkit-type device, illustrative damping)"},
+  "hand": {"m": 0.10, "b": 2.0, "k": 200.0, "_note": "relaxed pinch grip; hand mass is lumped with the handle"},
+  "controller": {"kc": 200.0, "bc": 2.0},
+  "alpha": 0.5,
+  "beta": 1.0,
+  "environments": {
+    "free":   {"k": 0.0,    "b": 0.0, "x_wall": 1.0},
+    "tissue": {"k": 300.0,  "b": 1.0, "x_wall": 0.005},
+    "wall":   {"k": 5000.0, "b": 1.0, "x_wall": 0.005}
+  },
+  "reach_task": {"x_start": 0.0, "x_goal": 0.020, "t_move": 1.0, "t_end": 3.0},
+  "laparoscopy": {"alpha": 0.25, "insertion_m": 0.040, "stroke_m": 0.060},
+  "tremor": {"f_tremor_hz": 9.0, "band_hz": [8.0, 12.0], "voluntary_max_hz": 1.0},
+  "eod": {"alpha": 4.0, "approach_m": 0.60, "stroke_m": 0.070, "speed_fraction": 0.5}
+}

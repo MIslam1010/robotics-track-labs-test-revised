@@ -1,0 +1,96 @@
+% SBEG 361 Introduction to Robotics -- Lab 4, Formal report 1 (IEEE two-column, <= 6 pages + appendices)
+% Compile with:  pdflatex report_template.tex   (needs the IEEEtran class, included in TeX Live / MiKTeX;
+% on Overleaf choose the "IEEE Conference Template").  See lab_handout.md for what to write in each
+% section and for the 100-point rubric.
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{cite}
+
+\newcommand{\Ad}[1]{[\mathrm{Ad}_{#1}]}
+
+\begin{document}
+
+\title{Gravity-Compensated Force Sensing at the Tip of a Laparoscopic Instrument and at an EOD Gripper}
+
+\author{\IEEEauthorblockN{<Name>, <Student ID>}
+\IEEEauthorblockA{SBEG 361 Introduction to Robotics, Systems and Biomedical Engineering\\
+Repository: <URL>, tag \texttt{lab4}}}
+
+\maketitle
+
+\begin{abstract}
+% <= 150 words: problem, method, key numbers (identified masses and centres of mass, tip-force RMS error,
+% port-force detection, tipping moment), one-sentence conclusion.
+\end{abstract}
+
+\begin{IEEEkeywords}
+wrench, adjoint map, force--torque sensor, gravity compensation, <application>
+\end{IEEEkeywords}
+
+\section{Introduction}
+% Why tip forces matter in laparoscopy; why the package's weight and centre of mass matter for an EOD robot.
+% Objectives (3 bullets).
+
+\section{Theory}
+% Exponential coordinates on SE(3) (MR Prop. 3.25, Eq. 3.88; log: Eqs. 3.91--3.92).
+% Wrench F = (m, f) (MR Eq. 3.93); power invariance (Eq. 3.94); F_b = [Ad_{T_ab}]^T F_a (Eq. 3.95).
+\begin{equation}
+\mathcal F_b = \Ad{T_{ab}}^{\mathsf T}\mathcal F_a
+\end{equation}
+
+\section{Method}
+% Sensor convention (MR Example 3.28); linear payload model and least squares; compensation; tip transfer;
+% m_t = 0 consistency test and threshold; composite centre of mass; frames figure.
+
+\section{Verification}
+% Tests against modern_robotics and MR Examples 3.26 and 3.28; one hand-calculated check.
+
+\section{Results}
+\begin{table}[t]
+\caption{Identified parameters (true values from the data description)}
+\label{tab:params}
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Body & Mass (kg) & Centre of mass in $\{f\}$ (m) & Error \\
+\midrule
+Laparoscope & & & \\
+EOD gripper & & & \\
+Package & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=\columnwidth]{fig1_tip_force.pdf}
+\caption{Tip force components and $\|f_t\|$ against time, with and without gravity compensation. <What to see.>}
+\label{fig:tipforce}
+\end{figure}
+% Fig. 2: |m_t| with threshold; Fig. 3: EOD frames and line of action; Fig. 4: your choice.
+
+\section{Discussion}
+% Error sources; tip versus port ambiguity; safety (patient, operator); design improvement.
+
+\section{Conclusion}
+
+\begin{thebibliography}{9}
+\bibitem{mr} K. M. Lynch and F. C. Park, \emph{Modern Robotics: Mechanics, Planning, and Control}.
+Cambridge, U.K.: Cambridge Univ. Press, 2017 (updated preprint 2019), Sec. 3.3.3 and 3.4, pp. 102--109.
+\bibitem{mls} R. M. Murray, Z. Li, and S. S. Sastry, \emph{A Mathematical Introduction to Robotic Manipulation}.
+Boca Raton, FL, USA: CRC Press, 1994, Ch. 2, Sec. 5, pp. 61--66.
+\bibitem{mrcode} K. M. Lynch \emph{et al.}, ``Modern Robotics software (Python),'' modern\_robotics package.
+\end{thebibliography}
+
+\appendices
+\section{AI-use note}
+% Tool and version, what you asked, what you kept or changed, how you verified it (or "no AI tools used").
+\section{Reflection}
+% <= 200 words.
+\section{Reproduction}
+% Commands that regenerate every number and figure, expected run time.
+
+\end{document}

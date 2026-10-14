@@ -1,0 +1,11 @@
+{
+  "description": "SBEG 46X Lab 7 -- tendon-driven ablation-catheter bending section (planar). ILLUSTRATIVE VALUES (teaching numbers, not data of a real product); same catheter as the Week 7 lectures and workshop.",
+  "L": 0.10,
+  "EI": 1.0e-3,
+  "r": 1.2e-3,
+  "tau_nominal": 6.0,
+  "tau_max": 12.0,
+  "sigma_p": 1.0e-4,
+  "sigma_theta": 0.008726646259971648,
+  "units": "L, r, sigma_p in m; EI in N m^2; tau in N; sigma_theta in rad (0.5 deg)"
+}

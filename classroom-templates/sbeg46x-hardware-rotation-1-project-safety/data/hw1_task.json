@@ -1,0 +1,21 @@
+{
+  "_note": "SBEG 46X hardware rotation 1 (Week 8): station settings and test definitions. ILLUSTRATIVE VALUES (not product, patient or soldier data). SI units.",
+  "station": {"name": "haptic station 2", "leader_unit": "H07", "follower_unit": "H08", "imu_unit": "IMU-03"},
+  "dt": 0.001,
+  "substeps": 5,
+  "device_nominal": {"m_h": 0.05705, "b_h": 0.15, "k_g": 1.2111, "x_res": 2.0e-5, "force_max": 2.0, "x_range": 0.040,
+                     "_m_h": "= course_models.handle_model() (sector + reflected rotor), rounded to 0.01 g"},
+  "operator_nominal": {"m": 0.10, "b": 2.0, "k": 200.0, "_note": "relaxed pinch grip of Labs 2-3 (project devices.OPERATOR)"},
+  "pp": {"Kp": 200.0, "Kd": 2.0, "alpha": 0.5, "beta": 0.5,
+         "_note": "position-position without delay (Labs 2-3 follower PD); beta = alpha makes the scaled channel power-conserving"},
+  "tissue": {"k": 300.0, "b": 1.0, "x_wall": 0.005, "_note": "Lab 2 'tissue' wall, rendered in the follower firmware, follower units"},
+  "trial": {"x_start": 0.0, "x_goal": 0.022, "t_on": 0.5, "t_reach": 1.0, "t_hold_end": 3.5, "t_back": 1.0, "t_end": 5.5,
+            "windows_s": {"free": [0.55, 0.95], "hold": [2.5, 3.5]}, "slow_speed": 0.02, "contact_margin": 0.0005},
+  "decay": {"K": 100.0, "x0": 0.015, "t_release": 0.5, "t_end": 3.0, "t_fit_end": 1.5,
+            "_note": "K x0 = 1.5 N < 2 N; fit only the first second after release, while the amplitude is large compared with the friction"},
+  "stop": {"t_trigger": 2.5, "fade_s": 0.005, "threshold_N": 0.02, "limit_s": 0.010},
+  "watchdog": {"t_limit_s": 0.010, "K_test": 50.0},
+  "imu": {"rate_hz": 200.0, "t_rest_s": 10.0, "t_end_s": 20.0},
+  "limits": {"force_max": 2.0, "x_abs_max": 0.038, "E_min": -1.0e-3, "rms_sim_meas": 0.5e-3, "dry_run_force_fraction": 0.5},
+  "_limits": "project hwtasks.HW[1]: x_abs_max 38 mm, E_min -1 mJ, rms_sim_meas 0.5 mm (provisional); the dry run must predict peak forces <= 50 % of the 2 N limit for a first run"
+}

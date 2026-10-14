@@ -1,0 +1,97 @@
+{
+  "arm_j1": {
+    "M": 0.024843742376012994,
+    "b": 0.01,
+    "g_cos": 0.0,
+    "g_sin": 0.0,
+    "tau_max": 1.08,
+    "qdot_max": 1.396263401595,
+    "q_limits": [
+      -2.8797932657906435,
+      2.8797932657906435
+    ],
+    "locked_q": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ],
+    "joint_index": 1,
+    "payload": 0.25,
+    "name": "arm_j1",
+    "description": "Course arm, base yaw joint 1 (vertical axis: no gravity torque, the MR 'horizontal plane' case), other joints locked at q_home = (0, -0.6, 1.4, -2.4, -1.57, 0) rad, 0.25 kg payload at the tool point. Torque and speed limits derated to 60 % / 50 % of the rated values (Course resources: Course robot models and hardware safety checklist). b illustrative.",
+    "source": "course_arm.py = shared course robot model course_arm(payload=0.25); M = MassMatrix[0, 0]"
+  },
+  "arm_j2": {
+    "M": 0.024051411770488536,
+    "b": 0.01,
+    "g_cos": -0.905204673427004,
+    "g_sin": 0.6961234993514066,
+    "tau_max": 1.8,
+    "qdot_max": 1.396263401595,
+    "q_limits": [
+      -2.8797932657906435,
+      2.8797932657906435
+    ],
+    "locked_q": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ],
+    "joint_index": 2,
+    "payload": 0.25,
+    "name": "arm_j2",
+    "description": "Course arm, shoulder joint 2 (horizontal axis), other joints locked at q_home, 0.25 kg payload. g(q) = g_cos cos q + g_sin sin q from modern_robotics GravityForces. Derated limits. b illustrative.",
+    "source": "course_arm.py = shared course robot model course_arm(payload=0.25); M = MassMatrix[1, 1]"
+  },
+  "knee": {
+    "name": "knee",
+    "M": 0.15083999999999997,
+    "b": 0.3,
+    "g_cos": 0.0,
+    "g_sin": 4.94424,
+    "tau_max": 40.0,
+    "qdot_max": 8.0,
+    "q_limits": [
+      -0.1,
+      2.0
+    ],
+    "description": "Powered transfemoral prosthesis, knee joint, thigh hanging vertically (hip q1 = -90 deg locked): q = knee flexion = -theta2 of leg_prosthesis_2r (positive = flexion; 0 = straight leg), g(q) = m g r sin q. Shank + prosthesis 2.4 kg, CoM 0.21 m below the knee, I_zz = 0.045 kg m^2 about the CoM. b, torque and speed limits illustrative.",
+    "source": "shared course robot model leg_prosthesis_2r (461 Week 3 'leg_2r'); M = I + m r^2"
+  },
+  "eod_wrist": {
+    "name": "eod_wrist",
+    "M": 0.043000000000000003,
+    "b": 0.2,
+    "g_cos": 3.4335000000000004,
+    "g_sin": 0.0,
+    "tau_max": 15.0,
+    "qdot_max": 2.0,
+    "q_limits": [
+      -2.0,
+      2.0
+    ],
+    "description": "EOD robot arm (protective use), wrist pitch joint 3 carrying the 2 kg suspect package, shoulder and elbow locked with the forearm horizontal (q1 + q2 = 0): g(q) = m g r cos q. Link 3 = 3.5 kg, CoM 0.10 m from the wrist axis, I_zz = 0.008 kg m^2. b, torque and speed limits illustrative.",
+    "source": "shared course robot model eod_3r (461 Weeks 1-3); M = I + m r^2"
+  },
+  "mr_link": {
+    "name": "mr_link",
+    "M": 0.5,
+    "b": 0.1,
+    "g_cos": 0.9810000000000001,
+    "g_sin": 0.0,
+    "tau_max": null,
+    "qdot_max": null,
+    "q_limits": [
+      -3.141592653589793,
+      3.141592653589793
+    ],
+    "description": "The single-joint robot of MR Sec. 11.4.1 (Eqs. 11.19-11.21, p. 424): M = 0.5 kg m^2, m = 1 kg, r = 0.1 m, b = 0.1 N m s/rad, vertical plane (g = 9.81). Used to reproduce MR Fig. 11.13.",
+    "source": "Modern Robotics Sec. 11.4.1, printed p. 424 (not illustrative)"
+  }
+}

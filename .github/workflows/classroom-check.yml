@@ -1,0 +1,77 @@
+name: Classroom 50 grading of the assignment templates
+# Each template is laid out as a student's assignment repository and graded by Classroom 50's own runner.py with the
+# course's declarative tests, on Classroom 50's runtime (ubuntu-latest + Python 3.11 from runtime.json):
+# untouched starter < 100 points, reference solution = 100 points, in Python and in C++ (LANGUAGE = cpp).
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'comma-separated template names to grade (empty = all)'
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths: ['classroom-templates/**', 'ci/c50*', 'ci/classroom_matrix.json', '.github/workflows/classroom-check.yml', 'cpp_support/**']
+permissions:
+  contents: read
+env:
+  RUNNER_URL: https://raw.githubusercontent.com/foundation50/classroom50/f859773b654458b440b62b44effcce53018d3312/cli/gh-teacher/skeleton/dotgithub/scripts/runner.py
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      m: ${{ steps.m.outputs.m }}
+    steps:
+    - uses: actions/checkout@v4
+    - id: m
+      env:
+        ONLY: ${{ inputs.only }}
+      run: echo "m=$(jq -c --arg only "$ONLY" 'if $only == "" then . else map(select(.name as $n | ($only | split(",") | index($n)))) end' ci/classroom_matrix.json)" >> "$GITHUB_OUTPUT"
+  grade:
+    needs: list
+    strategy:
+      fail-fast: false
+      matrix:
+        t: ${{ fromJSON(needs.list.outputs.m) }}
+    name: ${{ matrix.t.name }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Decrypt the solutions (repository secret; never printed)
+      env:
+        SOLUTIONS_KEY: ${{ secrets.SOLUTIONS_KEY }}
+      run: |
+        if [ -z "$SOLUTIONS_KEY" ]; then echo "SOLUTIONS_KEY secret not available"; exit 1; fi
+        printf '%s' "$SOLUTIONS_KEY" > "$RUNNER_TEMP/k"
+        openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in solutions.tar.gz.enc -pass "file:$RUNNER_TEMP/k" | tar xz
+        rm -f "$RUNNER_TEMP/k"
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: lay out the template as a student's repository; fetch Classroom 50's runner.py
+      run: |
+        mkdir -p "$RUNNER_TEMP/sol" && mv solutions "$RUNNER_TEMP/sol/"
+        cp ci/c50_check.py "${{ matrix.t.tests }}" "$RUNNER_TEMP/" && echo "TESTS=$RUNNER_TEMP/$(basename ${{ matrix.t.tests }})" >> "$GITHUB_ENV"
+        curl -sSfL "$RUNNER_URL" -o "$RUNNER_TEMP/runner.py"
+        mkdir "$RUNNER_TEMP/t" && cp -a "classroom-templates/${{ matrix.t.name }}/." "$RUNNER_TEMP/t/"
+        if [ -f "$RUNNER_TEMP/t/LANGUAGE" ]; then cp -a cpp_support "$RUNNER_TEMP/t/"; fi
+        find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+        cp -a "$RUNNER_TEMP/t/." . && ls
+    - name: Python, untouched starter (must score below 100)
+      run: python "$RUNNER_TEMP/c50_check.py" "$RUNNER_TEMP/runner.py" "$TESTS" "Python starter" ${{ matrix.t.kind == 'library' && 'full' || 'partial' }}
+    - name: Python, reference solution (must score 100)
+      if: matrix.t.kind == 'lab'
+      run: |
+        cp "$RUNNER_TEMP"/sol/${{ matrix.t.sol }}/*.py .
+        if [ -d "$RUNNER_TEMP/sol/${{ matrix.t.sol }}/cpp" ]; then cp "$RUNNER_TEMP"/sol/${{ matrix.t.sol }}/cpp/* cpp/; fi
+        LAB_IMPL=solution python "$RUNNER_TEMP/c50_check.py" "$RUNNER_TEMP/runner.py" "$TESTS" "Python solution" full
+    - name: C++, untouched starter (LANGUAGE = cpp; must score below 100)
+      if: matrix.t.cpp
+      run: |
+        sed -i '1s/.*/cpp/' LANGUAGE
+        python "$RUNNER_TEMP/c50_check.py" "$RUNNER_TEMP/runner.py" "$TESTS" "C++ starter" partial
+    - name: C++, reference solution (must score 100)
+      if: matrix.t.cpp
+      run: |
+        rm -rf build && for f in "$RUNNER_TEMP"/sol/${{ matrix.t.sol }}/cpp/solution*; do cp "$f" cpp/; done
+        LAB_IMPL=solution python "$RUNNER_TEMP/c50_check.py" "$RUNNER_TEMP/runner.py" "$TESTS" "C++ solution" full

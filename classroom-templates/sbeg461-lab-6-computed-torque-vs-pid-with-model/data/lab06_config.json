@@ -1,0 +1,105 @@
+{
+  "description": "SBEG 461 Lab 6 configuration (illustrative values). Robot: course arm (course_arm.py).",
+  "dt": 0.002,
+  "substeps": 2,
+  "payload": 0.25,
+  "friction_b": [
+    0.01,
+    0.01,
+    0.005,
+    0.001,
+    0.001,
+    0.0002
+  ],
+  "tau_limit_fraction": 0.6,
+  "joint_move": {
+    "q0": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ],
+    "dq": [
+      0.8,
+      0.4,
+      -0.5,
+      0.4,
+      0.4,
+      0.6
+    ],
+    "T": 1.5,
+    "T_end": 2.0
+  },
+  "setpoint": {
+    "q0": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ],
+    "dq0_offset": [
+      0.1,
+      -0.1,
+      0.1,
+      -0.1,
+      0.1,
+      0.1
+    ],
+    "T_end": 1.5
+  },
+  "task_move": {
+    "q0": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ],
+    "dp_s": [
+      0.0,
+      0.0,
+      -0.05
+    ],
+    "T": 1.0,
+    "T_end": 1.5
+  },
+  "cases": {
+    "exact": {
+      "model_payload": 0.25,
+      "model_mass_scale": 1.0,
+      "model_friction": true,
+      "text": "model = plant"
+    },
+    "payload_unknown": {
+      "model_payload": 0.0,
+      "model_mass_scale": 1.0,
+      "model_friction": true,
+      "text": "the controller does not know the 0.25 kg payload (unknown package / cup)"
+    },
+    "masses_120": {
+      "model_payload": 0.25,
+      "model_mass_scale": 1.2,
+      "model_friction": true,
+      "text": "all link masses and inertias 20 % too large in the model (as MR Exercise 11.11)"
+    }
+  },
+  "gains": {
+    "zeta": 1.0,
+    "wn": 20.0,
+    "ct_ki": 2000.0,
+    "pid_ki_fraction": 0.1,
+    "gain_reference_q": [
+      0.0,
+      -0.6,
+      1.4,
+      -2.4,
+      -1.57,
+      0.0
+    ]
+  }
+}

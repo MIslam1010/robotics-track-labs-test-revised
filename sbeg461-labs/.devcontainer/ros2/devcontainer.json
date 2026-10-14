@@ -1,0 +1,6 @@
+{
+  "name": "sbeg461-labs (ROS 2 Jazzy)",
+  "build": {"dockerfile": "../../docker/ros2/Dockerfile", "context": "../.."},
+  "postCreateCommand": "pip install -e library",
+  "customizations": {"vscode": {"extensions": ["ms-python.python", "ms-iot.vscode-ros"]}}
+}

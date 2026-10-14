@@ -1,0 +1,158 @@
+{
+  "note": "SBEG 46X Lab 10 parameters. ILLUSTRATIVE VALUES. Elbow and knee: M, g_s, g_c from the shared course models (modern_robotics MassMatrix / GravityForces), the same joints and deratings as Lab 8. Hapkit: m_h, k_g from the shared model 'hapkit' (handle coordinates), b_h and the operator hand from the SBEG 461 Lab 8 / course-project device data.",
+  "elbow": {
+    "model": "arm_exo_2r (elbow, upper arm hanging)",
+    "M": 0.0778,
+    "b": 0.1,
+    "g_s": 3.3354,
+    "g_c": 0.0,
+    "tau_rated": 15.0,
+    "mech_limits": [
+      0.0,
+      2.4
+    ],
+    "tau_max": 6.0,
+    "rom": [
+      0.2,
+      1.6
+    ],
+    "dt": 0.001,
+    "n_sub": 4,
+    "cbf": {
+      "alpha1": 10.0,
+      "alpha2": 10.0
+    },
+    "step": {
+      "theta0": 0.3,
+      "T": 3.0,
+      "steps": [
+        [
+          0.0,
+          1.7
+        ],
+        [
+          1.5,
+          0.4
+        ]
+      ],
+      "pd": {
+        "wn": 15.0,
+        "zeta": 0.5
+      }
+    },
+    "spasm": {
+      "theta0": 0.4,
+      "T": 6.0,
+      "ref": {
+        "mid": 0.95,
+        "amp": 0.55,
+        "period": 4.0
+      },
+      "aan": {
+        "K": 20.0,
+        "B": 0.5,
+        "delta": 0.05
+      },
+      "patient": {
+        "c": 0.5,
+        "Kp": 10.0,
+        "Bp": 0.3
+      },
+      "spasm": {
+        "amp": 3.0,
+        "t_on": 1.5,
+        "t_off": 3.0,
+        "ramp": 0.1
+      },
+      "tau_h_max": 4.0
+    },
+    "stop": {
+      "K": 500.0,
+      "B": 5.0
+    }
+  },
+  "knee": {
+    "model": "load_exo_2r (knee, hip locked at 0)",
+    "M": 18.7965625,
+    "b": 2.0,
+    "g_s": -238.996125,
+    "g_c": -50.031,
+    "tau_rated": 200.0,
+    "mech_limits": [
+      0.0,
+      1.6
+    ],
+    "tau_max": 200.0,
+    "tau_rate": 2000.0,
+    "rom": [
+      0.05,
+      0.6
+    ],
+    "dt": 0.001,
+    "n_sub": 4,
+    "cbf": {
+      "alpha1": 5.0,
+      "alpha2": 5.0
+    },
+    "step": {
+      "theta0": 0.1,
+      "T": 4.0,
+      "steps": [
+        [
+          0.0,
+          0.65
+        ],
+        [
+          2.0,
+          0.1
+        ]
+      ],
+      "pd": {
+        "wn": 4.0,
+        "zeta": 0.5
+      }
+    },
+    "stop": {
+      "K": 50000.0,
+      "B": 5000.0
+    }
+  },
+  "hapkit": {
+    "model": "hapkit (handle coordinates x = r_h theta)",
+    "m_h": 0.05705,
+    "b_h": 0.15,
+    "k_g": 1.2111,
+    "T": 0.001,
+    "x_res": 2e-05,
+    "v_filter_hz": 100.0,
+    "force_max": 2.0,
+    "x_range": 0.04,
+    "x_max": 0.025,
+    "cbf": {
+      "alpha1": 50.0,
+      "alpha2": 50.0
+    },
+    "wall": {
+      "K": 200.0,
+      "B": 0.0
+    },
+    "operator": {
+      "m": 0.1,
+      "b": 2.0,
+      "k": 200.0,
+      "x0": 0.0,
+      "t0": 0.2,
+      "speed": 0.05
+    },
+    "push": {
+      "x_int": 0.032,
+      "T": 1.5,
+      "F_h_max": 1.7
+    },
+    "hard_push": {
+      "x_int": 0.042,
+      "T": 1.5,
+      "F_h_max": 1.7
+    }
+  }
+}

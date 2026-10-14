@@ -1,0 +1,20 @@
+{
+  "_comment": "SBEG 361 Lab 0. Each entry: m (3 planar, 6 spatial), N (links INCLUDING ground), joints {type: count}. Joint types follow MR Table 2.1 (R, P, H, C, U, S) plus RP (revolute-prismatic pair, f=2), E (planar contact joint, f=3) and F (rigid attachment, f=0). Biomedical and defence entries use illustrative models.",
+  "mechanisms": [
+    {"name": "Four-bar linkage (MR Ex 2.3)", "app": "classic", "m": 3, "N": 4, "joints": {"R": 4}},
+    {"name": "Slider-crank (MR Ex 2.3)", "app": "classic", "m": 3, "N": 4, "joints": {"R": 3, "P": 1}},
+    {"name": "Five-bar linkage (MR Ex 2.4)", "app": "classic", "m": 3, "N": 5, "joints": {"R": 5}},
+    {"name": "Stephenson six-bar (MR Ex 2.4)", "app": "classic", "m": 3, "N": 6, "joints": {"R": 7}},
+    {"name": "Delta robot (MR Ex 2.7)", "app": "classic", "m": 6, "N": 17, "joints": {"R": 9, "S": 12}},
+    {"name": "Stewart-Gough 6-UPS (MR Ex 2.8)", "app": "classic", "m": 6, "N": 14, "joints": {"U": 6, "P": 6, "S": 6}},
+    {"name": "Four-bar (cruciate ligament) knee model", "app": "biomedical", "m": 3, "N": 4, "joints": {"R": 4}},
+    {"name": "Linkage-driven prosthetic finger", "app": "biomedical", "m": 3, "N": 6, "joints": {"R": 7}},
+    {"name": "Human arm, shoulder to palm (S-R-R-U)", "app": "biomedical", "m": 6, "N": 5, "joints": {"S": 1, "R": 2, "U": 1}},
+    {"name": "Hexapod fracture fixator 6-SPS", "app": "biomedical", "m": 6, "N": 14, "joints": {"S": 12, "P": 6}},
+    {"name": "Knee exoskeleton with self-aligning RP cuffs", "app": "biomedical/defence", "m": 3, "N": 5, "joints": {"R": 4, "RP": 2}},
+    {"name": "EOD robot 6R arm grasping a fixed handle", "app": "defence", "m": 6, "N": 7, "joints": {"R": 6, "F": 1}},
+    {"name": "EOD robot on free chassis, 6R arm grasping a fixed handle", "app": "defence", "m": 6, "N": 8, "joints": {"E": 1, "R": 6, "F": 1}},
+    {"name": "Casualty-litter scissor lift, two stages", "app": "defence", "m": 3, "N": 6, "joints": {"R": 6, "RP": 2}},
+    {"name": "Dual 7R arms holding one package", "app": "defence", "m": 6, "N": 16, "joints": {"R": 14, "F": 2}}
+  ]
+}

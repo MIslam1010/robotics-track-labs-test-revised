@@ -1,0 +1,8 @@
+{
+  "skin":   {"a1": 100.0, "a2": 20000.0, "f_p": 0.8},
+  "tissue": {"f_cut": 0.20, "mu": 12.0},
+  "pleura": {"z_pl": 0.025, "k_pl": 150.0, "f_p": 0.45},
+  "v_eps": 0.002,
+  "x_skin": -0.020,
+  "note": "Illustrative needle-decompression trainer (chest wall), forces scaled to the 2 N limit of the Hapkit-type device. Units: N, m, s. Model: stiffness-friction-cutting (Okamura, Simone & O'Leary 2004). Depth z = x - x_skin."
+}

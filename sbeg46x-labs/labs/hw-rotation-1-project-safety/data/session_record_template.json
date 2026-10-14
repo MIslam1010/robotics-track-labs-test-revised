@@ -1,0 +1,30 @@
+{
+  "_note": "Session record for one supervised hardware session (project brief section 5.2). Copy it to session_record.json and fill it in BEFORE any device is powered; the supervisor initials the printed copy. preflight(record) must return an empty list. 'arm' stays null at a haptic station; arm stations fill the arm block. 'imu' is null if no IMU module is used.",
+  "date": "",
+  "team": "",
+  "scenario": null,
+  "station": "haptic",
+  "units": {"leader": "", "follower": "", "imu": ""},
+  "members": [
+    {"name": "", "induction_signed": false, "touches_hardware": true},
+    {"name": "", "induction_signed": false, "touches_hardware": true},
+    {"name": "", "induction_signed": false, "touches_hardware": true}
+  ],
+  "supervisor": "",
+  "supervisor_present": false,
+  "estop_tested": false,
+  "stop_holder": "",
+  "leader_operator": "",
+  "dry_run": {"done": false, "peak_force_N": null, "peak_x_m": null},
+  "devices": {"force_max_N": null, "watchdog_enabled": false, "watchdog_range_m": null, "loop_overrun_watchdog": false},
+  "hands_on_handle": [],
+  "channel": {"architecture": "pp", "delay_s": 0.0, "delay_emulation": "software", "alpha": 0.5, "beta": 0.5},
+  "workspace": {"cables_tidy": false, "loose_items": true, "devices_fixed": false},
+  "imu": {"powered_by": "", "voltage_V": null, "over_clothing": false},
+  "logging": {"csv": false, "session_log": false},
+  "arm": null,
+  "_arm_block_example": {"first_run": true, "speed_fraction": null, "soft_limit_margin_deg": null, "keepout_radius_m": null,
+                         "keepout_taped": false, "keepout_clear": false, "payload_kg": null, "current_fraction": null,
+                         "estop_tested": false, "mat": false},
+  "faults": []
+}

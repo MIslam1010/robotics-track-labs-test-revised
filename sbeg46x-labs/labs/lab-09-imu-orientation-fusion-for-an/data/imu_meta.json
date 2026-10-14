@@ -1,0 +1,40 @@
+{
+  "description": "Simulated bench recording (illustrative values): thigh IMU on the hip-knee gait exoskeleton gait_exo_2r, swing leg on the test stand. theta_enc = hip encoder (reference only).",
+  "model": "gait_exo_2r (thigh, joint 1)",
+  "h": 0.01,
+  "g": 9.81,
+  "r_imu": 0.2,
+  "sensor_axes": "R_sb = Rot(z, theta): x forward (perpendicular to the thigh), y up the thigh toward the hip, z = hip axis",
+  "sampling": "gyro sample k = mean rate over (t_k - h, t_k]; accelerometer sample k = value at t_k",
+  "imu_spec": {
+    "gyro_noise_rad_s": 0.006,
+    "acc_noise_m_s2": 0.06,
+    "gyro_lsb_rad_s": 0.0005321125768275396,
+    "acc_lsb_m_s2": 0.00239501953125,
+    "gyro_bias_class_rad_s": 0.03,
+    "note": "datasheet-class values of a low-cost 6-axis MEMS IMU"
+  },
+  "encoder_counts_per_rev": 327680,
+  "phases": [
+    {
+      "name": "rest (leg hanging)",
+      "t0": 0.0,
+      "t1": 8.0
+    },
+    {
+      "name": "slow walking cadence, 1.0 Hz",
+      "t0": 8.0,
+      "t1": 36.0
+    },
+    {
+      "name": "fast cadence, 1.4 Hz",
+      "t0": 36.0,
+      "t1": 50.0
+    },
+    {
+      "name": "hold in flexion",
+      "t0": 50.0,
+      "t1": 60.0
+    }
+  ]
+}

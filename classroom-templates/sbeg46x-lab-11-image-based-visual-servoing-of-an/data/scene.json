@@ -1,0 +1,136 @@
+{
+ "_note": "SBEG 46X Lab 11 -- ILLUSTRATIVE VALUES (teaching values, not the data of a real product). Lengths in m, angles in rad, pixel coordinates (u right, v down) with the origin at the top-left corner.",
+ "inspection_camera": {
+  "_note": "Corke's default CentralCamera (RVC Sec. 15.2): EOD-arm gripper camera / inspection camera of Parts A-D",
+  "f": 0.008,
+  "rho_w": 1e-05,
+  "rho_h": 1e-05,
+  "u0": 512.0,
+  "v0": 512.0,
+  "W": 1024,
+  "H": 1024
+ },
+ "endoscope_camera": {
+  "_note": "0-degree laparoscope camera at the scope tip (Part E and the calibration data)",
+  "f": 0.0024,
+  "rho_w": 4e-06,
+  "rho_h": 4e-06,
+  "u0": 320.0,
+  "v0": 240.0,
+  "W": 640,
+  "H": 480
+ },
+ "target": {
+  "_note": "square planar fiducial (four corner markers) in the plane z_t = 0 of {t}",
+  "side": 0.5,
+  "T_wt": {
+   "p": [
+    0.0,
+    0.0,
+    3.0
+   ],
+   "rz": 0.0
+  }
+ },
+ "ibvs": {
+  "lam": 1.0,
+  "h": 0.1,
+  "n_max": 400,
+  "tol": 0.5,
+  "Z_star": 1.0,
+  "T_wc_star": {
+   "p": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "rz": 0.0
+  }
+ },
+ "start_poses": {
+  "corke": {
+   "p": [
+    1.0,
+    1.0,
+    -3.0
+   ],
+   "rz": 0.6
+  },
+  "fov": {
+   "p": [
+    -1.0,
+    1.7,
+    2.0
+   ],
+   "look_at": [
+    0.3,
+    1.0,
+    3.0
+   ],
+   "rz": -2.55
+  },
+  "roll_angles": [
+   0.5,
+   1.0,
+   1.5,
+   2.0,
+   2.5
+  ]
+ },
+ "calib": {
+  "_note": "pose of the endoscope camera in the frame of the calibration object for data/calib_points.csv",
+  "sigma_px": 0.3,
+  "seed": 1131,
+  "T_wc": [
+   [
+    -0.6726727939963125,
+    0.35064213766805413,
+    -0.6515837655350015,
+    0.075
+   ],
+   [
+    0.7399400733959437,
+    0.3187655796982311,
+    -0.5923488777590924,
+    0.07
+   ],
+   [
+    0.0,
+    -0.8805899139163633,
+    -0.4738791022072739,
+    0.065
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ]
+ },
+ "endoscope": {
+  "_note": "UR5 + laparoscope (course_models.ur5_laparoscope); camera {c} = {b} at the scope tip",
+  "theta0": [
+   2.6,
+   -2.5,
+   2.3,
+   -1.4,
+   -1.57,
+   0.0
+  ],
+  "ell0": 0.1,
+  "Z0": 0.08,
+  "Z_des": 0.08,
+  "a": 0.015,
+  "dz": 0.01,
+  "f_hz": 0.1,
+  "t_still": 3.0,
+  "T_end": 15.0,
+  "h": 0.03333333333333333,
+  "lam": 2.0,
+  "delay": 0,
+  "k_z": 0.0,
+  "k_rcm": 0.0,
+  "ell_min": 0.03
+ }
+}

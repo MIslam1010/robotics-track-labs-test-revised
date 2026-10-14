@@ -1,0 +1,12 @@
+{
+  "T": 0.001,
+  "x_res": 2e-05,
+  "force_max": 2.0,
+  "x_range": 0.04,
+  "k_t": 0.01,
+  "m_h": 0.05705,
+  "b_h": 0.15,
+  "k_g": 1.2111,
+  "f_c": 0.0386,
+  "note": "Illustrative values, identical to SBEG 461 Lab 8 (device.json). m_h and k_g from course_models.hapkit (= hapkit of the shared course robot models, Course resources); b_h, k_t, x_res illustrative; f_c = handle-level Coulomb friction for an illustrative 0.2 mN m motor friction (G tau_f / r_h, SBEG 461 Week 8). Re-identify m_h and b_h on your own device."
+}

@@ -1,0 +1,68 @@
+{
+  "description": "SBEG 461 Lab 7 configuration (illustrative values). Robots: planar 2R (robots.py) and the course arm (course_arm.py).",
+  "dt": 0.002,
+  "planar_2r": {
+    "b": [
+      0.05,
+      0.02
+    ],
+    "q_eq": [
+      0.6,
+      0.9
+    ],
+    "q_hang": [
+      -1.5707963267948966,
+      0.0
+    ],
+    "pd": {
+      "zeta": 1.0,
+      "wn": 8.0
+    },
+    "lyapunov": {
+      "q0": [
+        0.9,
+        0.5
+      ],
+      "dq0": [
+        0.0,
+        0.0
+      ],
+      "T": 4.0
+    },
+    "wrong_model_mass_scale": 0.8,
+    "lqr": {
+      "q_max": 0.05,
+      "dq_max": 0.5,
+      "tau_max": [
+        5.0,
+        2.0
+      ],
+      "x0": [
+        0.05,
+        -0.05,
+        0.0,
+        0.0
+      ],
+      "T": 3.0
+    }
+  },
+  "course_arm": {
+    "b": [
+      0.01,
+      0.01,
+      0.005,
+      0.001,
+      0.001,
+      0.0002
+    ],
+    "pd": {
+      "zeta": 1.0,
+      "wn": 8.0
+    },
+    "lqr": {
+      "q_max": 0.05,
+      "dq_max": 0.5,
+      "tau_fraction": 0.2
+    }
+  }
+}

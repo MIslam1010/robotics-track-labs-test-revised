@@ -1,0 +1,446 @@
+{
+ "S1": {
+  "results": {
+   "theta_deg": [
+    -1.0332432858229272,
+    -85.47403096346854,
+    104.94649853446097,
+    -109.4724675744769,
+    -89.99999999940755,
+    -91.0332432864125
+   ],
+   "mu1": 2.178897419577688,
+   "mu3": 0.12649317358169546,
+   "sigma_min_Jb": 0.24300521170008818
+  },
+  "checks": [
+   {
+    "id": "AT1-1",
+    "text": "nominal handle pose reachable within safe limits",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT1-2",
+    "text": "mu1(J_v,b) at nominal pose <= limit",
+    "value": 2.178897419577688,
+    "limit": 6.0,
+    "passed": true
+   },
+   {
+    "id": "AT1-3",
+    "text": "all circle + line waypoints reachable, safe limits",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT1-4",
+    "text": "mu1 <= limit along both therapy paths",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT1-5",
+    "text": "therapy-grid coverage >= 80 % (reachable and mu1 <= limit)",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT1-6",
+    "text": "handle speed <= 0.25 m/s, no joint jump > 10 deg/waypoint",
+    "value": null,
+    "limit": null,
+    "passed": null
+   }
+  ]
+ },
+ "S2": {
+  "results": {
+   "elbow_head": 0.5043575214166386,
+   "theta_deg": [
+    36.499692878327444,
+    11.931828438675668,
+    -0.5319298426644392,
+    -83.8493602739563,
+    1.6762658002046367,
+    71.90979491411782,
+    51.79687896287841
+   ],
+   "rank_Jb": 6,
+   "null_dim": 1,
+   "mu1": 3.199306386114505,
+   "head_clearance": 0.14495097598607615,
+   "tilt_deg": 0.0
+  },
+  "checks": [
+   {
+    "id": "AT2-1",
+    "text": "spoon stop pose reachable within limits",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT2-2",
+    "text": "spoon tilt <= 5 deg at stop pose",
+    "value": 0.0,
+    "limit": 5.0,
+    "passed": true
+   },
+   {
+    "id": "AT2-3",
+    "text": "arm (to wrist) clearance from head sphere >= 0.10 m",
+    "value": 0.14495097598607615,
+    "limit": 0.1,
+    "passed": true
+   },
+   {
+    "id": "AT2-4",
+    "text": "redundancy: dim null(J_b) = 1 at stop pose",
+    "value": 1,
+    "limit": 1,
+    "passed": true
+   },
+   {
+    "id": "AT2-5",
+    "text": "0.15 m straight approach, v <= 0.05 m/s, tilt <= 5 deg",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT2-6",
+    "text": "elbow >= 0.52 m from head centre (use the null space)",
+    "value": 0.5043575214166386,
+    "limit": 0.52,
+    "passed": false
+   }
+  ]
+ },
+ "S3": {
+  "results": {
+   "theta_deg": [
+    [
+     4.684197620706588,
+     -50.011701450631016,
+     101.27163261530912,
+     -141.25992901891425,
+     -90.00000149179093,
+     3.242983026030154e-14
+    ],
+    [
+     4.112040180589038,
+     -43.542570446697965,
+     75.46097433664612,
+     -106.95528305971544,
+     -88.93657358123798,
+     5.826638328596871e-14
+    ],
+    [
+     -3.474195036241158,
+     -51.882361392213,
+     107.99318054742523,
+     -145.18056734705777,
+     -75.02821533681885,
+     -1.4793434346611658e-15
+    ]
+   ],
+   "rcm_err": 7.490074708055236e-08,
+   "err_worst_mm": 1.605806217613904,
+   "err_rms_mm": 0.4236601983281079
+  },
+  "checks": [
+   {
+    "id": "AT3-1",
+    "text": "guide on all 3 entry->target lines; limits; links above table",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT3-2",
+    "text": "guide axis passes through entry point (<= 0.1 mm)",
+    "value": 7.490074708055236e-05,
+    "limit": 0.1,
+    "passed": true
+   },
+   {
+    "id": "AT3-3",
+    "text": "worst-case encoder-induced target error <= 1.5 mm",
+    "value": 1.605806217613904,
+    "limit": 1.5,
+    "passed": false
+   },
+   {
+    "id": "AT3-4",
+    "text": "pivot between directions with RCM error <= 0.5 mm",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT3-5",
+    "text": "15 mm guide advance along its axis, lateral error <= 0.5 mm",
+    "value": null,
+    "limit": null,
+    "passed": null
+   }
+  ]
+ },
+ "S4": {
+  "results": {
+   "up": {
+    "theta_deg": [
+     0.0,
+     -2.1196448382222464,
+     55.19745827735732,
+     0.0,
+     -53.07781353291406,
+     0.0
+    ],
+    "ok": true,
+    "corridor_margin": -0.011868504372468364,
+    "ground_margin": 0.040000000686182535,
+    "theta5_deg": -53.07781353291406,
+    "mu1": 6.285799903040243
+   },
+   "down": {
+    "theta_deg": [
+     0.0,
+     51.14561646331058,
+     -55.197458592242114,
+     0.0,
+     4.051843036558217,
+     0.0
+    ],
+    "ok": true,
+    "corridor_margin": 0.17999999482872167,
+    "ground_margin": -0.01299428744494352,
+    "theta5_deg": 4.051843036558217,
+    "mu1": 5.287229221048668
+   },
+   "best_branch": "up"
+  },
+  "checks": [
+   {
+    "id": "AT4-1",
+    "text": "grasp pose reachable within limits (either elbow branch)",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT4-2",
+    "text": "corridor margin >= 0.02 m (best branch: elbow-up)",
+    "value": -0.011868504372468364,
+    "limit": 0.02,
+    "passed": false
+   },
+   {
+    "id": "AT4-3",
+    "text": "ground margin >= 0.02 m (best branch: elbow-up)",
+    "value": 0.040000000686182535,
+    "limit": 0.02,
+    "passed": true
+   },
+   {
+    "id": "AT4-4",
+    "text": "wrist singularity margin |theta5| >= 10 deg at grasp",
+    "value": 53.07781353291406,
+    "limit": 10.0,
+    "passed": true
+   },
+   {
+    "id": "AT4-5",
+    "text": "teleop resolved-rate approach 0.20 m, error <= 5 mm, rates ok",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT4-6",
+    "text": "corridor + ground margins along the whole approach",
+    "value": null,
+    "limit": null,
+    "passed": null
+   }
+  ]
+ },
+ "S5": {
+  "results": {
+   "A_ground": {
+    "theta_deg": [
+     0.0,
+     87.33975638462796,
+     -59.44712252300023,
+     -27.89263365683763,
+     0.0
+    ],
+    "tau": [
+     0.0,
+     -833.85,
+     -797.4248186881915,
+     -147.15000001016034,
+     0.0
+    ],
+    "ratio": [
+     0.0,
+     0.6253875000000001,
+     0.9967810233602394,
+     0.5518125000381012,
+     0.0
+    ],
+    "m_max": 100.32293719125082,
+    "mu3": 0.5623786107721538
+   },
+   "B_mid": {
+    "theta_deg": [
+     0.0,
+     85.95505501737156,
+     -93.46372941382278,
+     7.508674486194458,
+     0.0
+    ],
+    "tau": [
+     0.0,
+     -931.9499999999999,
+     -876.5910090614116,
+     -147.15000000153142,
+     0.0
+    ],
+    "ratio": [
+     0.0,
+     0.6989625,
+     1.0957387613267644,
+     0.5518125000057428,
+     0.0
+    ],
+    "m_max": 91.26262894899872,
+    "mu3": 0.6900651890499372
+   },
+   "C_transfer": {
+    "theta_deg": [
+     0.0,
+     77.3492070643046,
+     -128.07312332607918,
+     50.7239162613497,
+     0.0
+    ],
+    "tau": [
+     0.0,
+     -784.8000000000001,
+     -612.9222785916812,
+     -147.15000003294455,
+     0.0
+    ],
+    "ratio": [
+     0.0,
+     0.5886000000000001,
+     0.7661528482396015,
+     0.551812500123542,
+     0.0
+    ],
+    "m_max": 130.52225835846096,
+    "mu3": 0.47725996223716666
+   },
+   "worst_pose": "B_mid"
+  },
+  "checks": [
+   {
+    "id": "AT5-1",
+    "text": "all 3 lifting poses reachable with level cradle",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT5-2",
+    "text": "max |tau_i|/(tau_rated,i/SF) <= 1 (worst: B_mid)",
+    "value": 1.0957387613267644,
+    "limit": 1.0,
+    "passed": false
+   },
+   {
+    "id": "AT5-3",
+    "text": "elbow singularity margin |theta3| >= 10 deg",
+    "value": 59.44712252300023,
+    "limit": 10.0,
+    "passed": true
+   },
+   {
+    "id": "AT5-4",
+    "text": "lift path A->B->C continuous, cradle tilt <= 5 deg",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT5-5",
+    "text": "lift speed 0.10 m/s within joint rate limits",
+    "value": null,
+    "limit": null,
+    "passed": null
+   }
+  ]
+ },
+ "S6": {
+  "results": {
+   "theta": [
+    0.361417908049912,
+    -1.3793615486254114,
+    1.4974545657680058,
+    -1.918610294259348,
+    -1.6566625816787512,
+    2.0608363833401017e-16,
+    0.0872997122935605
+   ],
+   "rcm_err": 5.226815936465705e-09,
+   "tip_err": 6.316773627636862e-09,
+   "port_from_tip": 0.08246211251241677,
+   "insertion": 0.0872997122935605,
+   "null_dim": 2,
+   "sigma_min_Jb": 0.23040157374367704
+  },
+  "checks": [
+   {
+    "id": "AT6-1",
+    "text": "start pose: tip on circle, shaft through port, limits",
+    "value": null,
+    "limit": null,
+    "passed": true
+   },
+   {
+    "id": "AT6-2",
+    "text": "RCM error at start pose <= 2 mm",
+    "value": 5.226815936465705e-06,
+    "limit": 2.0,
+    "passed": true
+   },
+   {
+    "id": "AT6-3",
+    "text": "tip error at start pose <= 1 mm",
+    "value": 6.3167736276368624e-06,
+    "limit": 1.0,
+    "passed": true
+   },
+   {
+    "id": "AT6-4",
+    "text": "track 20 mm circle: RCM <= 2 mm, tip <= 1 mm throughout",
+    "value": null,
+    "limit": null,
+    "passed": null
+   },
+   {
+    "id": "AT6-5",
+    "text": "5:1 motion scaling, tip speed <= 20 mm/s, rates ok",
+    "value": null,
+    "limit": null,
+    "passed": null
+   }
+  ]
+ }
+}

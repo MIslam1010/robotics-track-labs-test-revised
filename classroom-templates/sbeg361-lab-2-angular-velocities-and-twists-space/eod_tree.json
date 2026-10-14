@@ -1,0 +1,65 @@
+{
+  "description": "Tracked EOD robot: base, mast camera, gripper and a detected suspect package (illustrative values, Week 2 Workshop Problem 4). Edges store T_parent_child; metres.",
+  "transforms": [
+    {
+      "parent": "odom",
+      "child": "base_link",
+      "translation": [
+        5.0,
+        2.0,
+        0.0
+      ],
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.258819045103,
+        0.965925826289
+      ]
+    },
+    {
+      "parent": "base_link",
+      "child": "mast_camera",
+      "translation": [
+        0.2,
+        0.0,
+        0.8
+      ],
+      "rotation_xyzw": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ]
+    },
+    {
+      "parent": "mast_camera",
+      "child": "package",
+      "translation": [
+        0.1,
+        0.5,
+        1.2
+      ],
+      "rotation_xyzw": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "parent": "base_link",
+      "child": "gripper",
+      "translation": [
+        0.9,
+        0.0,
+        0.4
+      ],
+      "rotation_xyzw": [
+        0.0,
+        0.707106781187,
+        0.0,
+        0.707106781187
+      ]
+    }
+  ]
+}

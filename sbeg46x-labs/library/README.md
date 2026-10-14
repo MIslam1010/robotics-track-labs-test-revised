@@ -1,0 +1,20 @@
+# sbeg46x_medrob — your cumulative SBEG 46X Medical Robotics library
+
+Each lab adds tested functions to this package; later labs, the project and the next course reuse it
+(install it in editable mode: `python -m pip install -e .`). Copy each function into `sbeg46x_medrob/` once its lab
+tests pass, keep the same names and signatures, and add the lab's tests to `tests/`.
+
+| Week | Lab | Functions you write (from the lab starter) |
+|---|---|---|
+| 1 | Lab 1 — Software remote centre of motion: resolved-rate control of the course arm with a laparoscope | `environment_report`, `load_task`, `skew`, `min_jerk`, `port_frame`, `make_trajectory`, `tool_pose`, `shaft`, `rcm_geometry`, `perp_basis`, `point_jacobian`, `rcm_jacobian` … |
+| 2 | Lab 2 — Teleoperation with a Hapkit leader: scaling, clutch, tremor filter and two-port models | `load_params`, `load_log`, `minjerk`, `reach_intent`, `simulate_teleop`, `jacobian_body`, `hapkit_effective_mass`, `saturate_force`, `watchdog_ok`, `map_with_clutch`, `rate_limit`, `clutch_strokes` … |
+| 3 | Lab 3 — Delayed bilateral teleoperation: instability, wave variables and time-domain passivity (Formal report 1) | `load_params`, `minjerk`, `reach_intent`, `network_delays`, `contact_force`, `simulate`, `contact_stiffness`, `delay_margin`, `wave_encode`, `wave_leader`, `wave_follower`, `wave_apparent_impedance` … |
+| 4 | Lab 4 — Haptic rendering on the Hapkit: virtual wall, Z-width, virtual fixtures and a needle-insertion profile | `load_device`, `load_tissue`, `load_csv`, `rk4_step`, `simulate_device`, `hand_ramp`, `colgate_K_max`, `required_damping`, `quantisation_K_max`, `sampled_wall_work`, `wall_force`, `bounce_restitution` … |
+| 5 | Lab 5 — Navigation pipeline: pivot calibration, paired-point registration and TRE (prediction vs Monte Carlo vs measurement) | `load_phantom`, `load_joints`, `rot_to_T`, `flange_pose_mm`, `pivot_calibration`, `pivot_from_joint_log`, `tip_position_mm`, `register_points`, `apply_T`, `fre`, `fre_expected`, `fle_from_fre` … |
+| 6 | Lab 6 — Two-segment tendon-driven catheter: constant-curvature kinematics, Jacobian and resolved-rate tip control | `load_catheter`, `load_csv`, `vee`, `trans_z`, `arc_transform`, `bend_to_arc`, `arc_to_bend`, `segment_twist`, `segment_transform_exp`, `tendon_lengths`, `bend_from_tendons`, `tension_allocation` … |
+| 7 | Lab 7 — Cosserat-rod catheter: shooting and BVP solvers, CC vs Cosserat under tip loads, tip-force estimation | `load_catheter`, `load_csv`, `tip_pose`, `contact_direction`, `cc_tip`, `tendon_curvature`, `cc_transform`, `pcc_tip`, `pneumatic_curvature`, `rod_rhs`, `shooting_residual`, `solve_rod_shooting` … |
+| 8 | Hardware Rotation 1 — Project Safety Induction and a Supervised Teleoperation Trial | `load_task`, `load_record`, `write_log`, `load_log`, `minjerk`, `intent`, `tissue_force`, `device_from`, `simulate_pp`, `simulate_follower`, `simulate_free_decay`, `rms` … |
+| 9 | Lab 8 — PD vs LQR vs MPC on an exoskeleton joint with torque and range limits (Formal report 2) | `load_params`, `setpoint`, `gravity`, `solve_qp`, `error_limits`, `make_controller`, `simulate`, `joint_state_space`, `discretize_zoh`, `pd_gains`, `scalar_care`, `scalar_dare` … |
+| 10 | Lab 9 — IMU orientation fusion for an exoskeleton thigh: complementary filter vs extended Kalman filter | `load_meta`, `load_recording`, `rms_deg`, `quat_from_accel`, `accel_tilt`, `gyro_integrate`, `cf_alpha`, `complementary_filter`, `bias_at_rest`, `kf_predict`, `kf_update`, `accel_model` … |
+| 11 | Lab 10 — CBF-QP safety filter versus saturation on an exoskeleton joint and on the Hapkit | `load_params`, `gravity`, `step_setpoint`, `therapy_reference`, `smooth_pulse`, `patient_torque`, `operator_target`, `saturate_toward_limit`, `virtual_wall_force`, `solve_qp`, `end_stop_torque`, `pd_torque` … |
+| 12 | Lab 11 — Image-based visual servoing of an endoscope-holding arm with a simulated pinhole camera (Formal report 3) | `load_scene`, `trans`, `rotz`, `pose_from_spec`, `camera_K`, `target_points`, `load_calib`, `decompose_camera_matrix`, `endoscope_setup`, `instrument_tip`, `simulate_endoscope`, `endoscope_metrics` … |

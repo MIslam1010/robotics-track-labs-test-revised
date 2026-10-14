@@ -1,0 +1,71 @@
+{
+  "description": "3-D-printed head phantom (illustrative): six fiducial divots and two check divots localised in a CT scan (image frame {I}, mm); internal targets planned in the same scan.",
+  "ct_voxel_mm": [
+    0.5,
+    0.5,
+    0.6
+  ],
+  "fiducials_image_mm": [
+    [
+      0.03,
+      0.12,
+      -0.04
+    ],
+    [
+      99.77,
+      0.07,
+      5.08
+    ],
+    [
+      100.14,
+      79.87,
+      -0.11
+    ],
+    [
+      -0.32,
+      80.08,
+      5.12
+    ],
+    [
+      49.9,
+      7.93,
+      34.97
+    ],
+    [
+      50.24,
+      72.14,
+      35.17
+    ]
+  ],
+  "check_points_image_mm": [
+    [
+      24.98,
+      39.93,
+      30.17
+    ],
+    [
+      84.75,
+      20.08,
+      19.81
+    ]
+  ],
+  "targets_image_mm": {
+    "T1_central": [
+      50,
+      40,
+      10
+    ],
+    "T2_lateral": [
+      140,
+      40,
+      0
+    ],
+    "T3_deep": [
+      50,
+      40,
+      -12
+    ]
+  },
+  "pivot_divot": "pivot divot screwed to the table, position unknown (find it by pivot calibration)",
+  "pointer_nominal_length_mm": 70.0
+}

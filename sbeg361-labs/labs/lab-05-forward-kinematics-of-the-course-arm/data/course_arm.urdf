@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!-- Course arm: desktop UR-type 6R (myCobot-280 class): generated from the course PoE/Mlist/Glist model (SBEG 361/461 course resources). ILLUSTRATIVE VALUES. Source: Kinematics: SBEG 361 project starter/scenarios.py desktop_6r and scenario_sheets.md S3 (MR Example 4.5 form); inertial data, rated speed/torque: illustrative (this file) -->
+<robot name="course_arm">
+  <link name="base_link"/>
+  <link name="link1">
+    <inertial>
+      <origin xyz="0 0.01 0.105" rpy="0 0 0"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.00012" ixy="0" ixz="0" iyy="0.000101666666667" iyz="0" izz="0.000101666666667"/>
+    </inertial>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.055 0.03 0" rpy="0 0 0"/>
+      <mass value="0.16"/>
+      <inertia ixx="4.26666666667e-05" ixy="0" ixz="0" iyy="0.000246666666667" iyz="0" izz="0.000246666666667"/>
+    </inertial>
+  </link>
+  <link name="link3">
+    <inertial>
+      <origin xyz="0.048 0.005 0" rpy="0 0 0"/>
+      <mass value="0.12"/>
+      <inertia ixx="2.45e-05" ixy="0" ixz="0" iyy="0.00015625" iyz="0" izz="0.00015625"/>
+    </inertial>
+  </link>
+  <link name="link4">
+    <inertial>
+      <origin xyz="-2.77555756156e-17 0.04 0" rpy="0 0 0"/>
+      <mass value="0.08"/>
+      <inertia ixx="2.48333333333e-05" ixy="0" ixz="0" iyy="1.63333333333e-05" iyz="0" izz="2.48333333333e-05"/>
+    </inertial>
+  </link>
+  <link name="link5">
+    <inertial>
+      <origin xyz="-2.77555756156e-17 1.38777878078e-17 0.09" rpy="0 0 0"/>
+      <mass value="0.08"/>
+      <inertia ixx="2.48333333333e-05" ixy="0" ixz="0" iyy="2.48333333333e-05" iyz="0" izz="1.63333333333e-05"/>
+    </inertial>
+  </link>
+  <link name="link6">
+    <inertial>
+      <origin xyz="-2.77555756156e-17 0.1 -1.38777878078e-17" rpy="0 0 0"/>
+      <mass value="0.03"/>
+      <inertia ixx="4.5625e-06" ixy="0" ixz="0" iyy="8e-06" iyz="0" izz="4.5625e-06"/>
+    </inertial>
+  </link>
+  <link name="tool0"/>
+  <joint name="j1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.87979326579" upper="2.87979326579" effort="1.8" velocity="2.79252680319"/>
+  </joint>
+  <joint name="j2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.1312" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.87979326579" upper="2.87979326579" effort="3" velocity="2.79252680319"/>
+  </joint>
+  <joint name="j3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0.11 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.87979326579" upper="2.87979326579" effort="1.5" velocity="2.79252680319"/>
+  </joint>
+  <joint name="j4" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0.096 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.87979326579" upper="2.87979326579" effort="0.6" velocity="2.79252680319"/>
+  </joint>
+  <joint name="j5" type="revolute">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz="0 0.0634 -0.1312" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-2.87979326579" upper="2.87979326579" effort="0.6" velocity="2.79252680319"/>
+  </joint>
+  <joint name="j6" type="revolute">
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin xyz="0 -0.0634 0.0561" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.05432619099" upper="3.05432619099" effort="0.4" velocity="2.79252680319"/>
+  </joint>
+  <joint name="tool_fixed" type="fixed">
+    <parent link="link6"/>
+    <child link="tool0"/>
+    <origin xyz="0 0.109 0" rpy="1.57079632679 -0 3.14159265359"/>
+  </joint>
+</robot>

@@ -1,0 +1,148 @@
+{
+ "bench_or": {
+  "description": "Biomedical (scaled bench-top OR / laboratory rig, illustrative geometry): the course arm carries a 0.125 kg instrument carrier from the ready pose A above the instrument tray to a hand-over point on its left, B2.  A sterile-drape dome (sphere 1) and a lamp head (sphere 2) clutter the way; the bench top is the plane z = 0 and a screen on the right is the plane x <= 0.30 m.",
+  "q_start": [
+   0.0,
+   -0.6,
+   1.4,
+   -2.4,
+   -1.57,
+   0.0
+  ],
+  "q_goal": [
+   1.3,
+   -0.5,
+   1.3,
+   -2.3,
+   -1.57,
+   0.0
+  ],
+  "spheres": [
+   [
+    0.15,
+    0.17,
+    0.05,
+    0.055
+   ],
+   [
+    0.13,
+    0.12,
+    0.3,
+    0.05
+   ]
+  ],
+  "planes": [
+   [
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ],
+   [
+    -1.0,
+    0.0,
+    0.0,
+    -0.3
+   ]
+  ],
+  "sample_limits": [
+   [
+    -2.0,
+    2.0
+   ],
+   [
+    -1.6,
+    0.4
+   ],
+   [
+    0.0,
+    2.6
+   ],
+   [
+    -3.2,
+    -1.0
+   ],
+   [
+    -2.2,
+    -0.9
+   ],
+   [
+    -1.0,
+    1.0
+   ]
+  ]
+ },
+ "eod_rig": {
+  "description": "Defence, protective use (scaled EOD training rig, illustrative geometry): the same arm reaches from the ready pose A over the rim of an open crate to grasp an inert mock package at D2 on its right. The crate rim is modelled by three spheres; the table is the plane z = 0.",
+  "q_start": [
+   0.0,
+   -0.6,
+   1.4,
+   -2.4,
+   -1.57,
+   0.0
+  ],
+  "q_goal": [
+   -1.0,
+   -0.3,
+   1.4,
+   -2.7,
+   -1.57,
+   0.0
+  ],
+  "spheres": [
+   [
+    0.17,
+    -0.05,
+    0.03,
+    0.03
+   ],
+   [
+    0.23,
+    -0.05,
+    0.03,
+    0.03
+   ],
+   [
+    0.29,
+    -0.05,
+    0.03,
+    0.03
+   ]
+  ],
+  "planes": [
+   [
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ]
+  ],
+  "sample_limits": [
+   [
+    -2.0,
+    2.0
+   ],
+   [
+    -1.6,
+    0.4
+   ],
+   [
+    0.0,
+    2.6
+   ],
+   [
+    -3.2,
+    -1.0
+   ],
+   [
+    -2.2,
+    -0.9
+   ],
+   [
+    -1.0,
+    1.0
+   ]
+  ]
+ }
+}

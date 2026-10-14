@@ -1,0 +1,103 @@
+{
+  "note": "SBEG 46X Lab 8 parameters. ILLUSTRATIVE VALUES. M, g_s, g_c from the shared course models (modern_robotics MassMatrix / GravityForces); tau_max, rom, v_max are therapy/safety deratings.",
+  "elbow": {
+    "model": "arm_exo_2r (elbow)",
+    "M": 0.0778,
+    "b": 0.1,
+    "g_s": 3.3354,
+    "g_c": 0.0,
+    "tau_rated": 15.0,
+    "mech_limits": [
+      0.0,
+      2.4
+    ],
+    "tau_max": 6.0,
+    "rom": [
+      0.2,
+      1.6
+    ],
+    "v_max": 3.0,
+    "h": 0.01,
+    "pd": {
+      "wn": 15.0,
+      "zeta": 0.5
+    },
+    "lqr": {
+      "x_max": [
+        0.1,
+        1.5
+      ],
+      "u_max": [
+        2.5
+      ]
+    },
+    "mpc": {
+      "N": 30,
+      "g_reserve": 3.5
+    },
+    "task": {
+      "theta0": 0.3,
+      "T": 3.0,
+      "steps": [
+        [
+          0.0,
+          1.5
+        ],
+        [
+          1.5,
+          0.4
+        ]
+      ]
+    }
+  },
+  "knee": {
+    "model": "load_exo_2r (knee)",
+    "M": 18.7965625,
+    "b": 2.0,
+    "g_s": -238.996125,
+    "g_c": -50.031,
+    "tau_rated": 200.0,
+    "mech_limits": [
+      0.0,
+      1.6
+    ],
+    "tau_max": 200.0,
+    "rom": [
+      0.05,
+      0.6
+    ],
+    "v_max": 1.0,
+    "h": 0.01,
+    "pd": {
+      "wn": 3.0,
+      "zeta": 0.7
+    },
+    "lqr": {
+      "x_max": [
+        0.05,
+        0.5
+      ],
+      "u_max": [
+        20.0
+      ]
+    },
+    "mpc": {
+      "N": 30,
+      "g_reserve": 180.0
+    },
+    "task": {
+      "theta0": 0.1,
+      "T": 6.0,
+      "steps": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          3.0,
+          0.1
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_comment": "SBEG 461 Lab 1 robot models. Planar n-R chains moving in the vertical x-y plane, gravity along -y, all joint axes along z, zero configuration = all links along +x. L = link lengths [m], m = link masses [kg], r = distance of the link centre of mass from its own joint along the link [m], I = link moment of inertia about its centre of mass, about z [kg m^2]. All values are ILLUSTRATIVE (not taken from a specific product or person).",
+  "mr_2r_point": {
+    "description": "MR Figure 8.1 / Eq. 8.9: point masses at the link ends, L1 = L2 = m1 = m2 = 1 (as in MR Fig. 8.3)",
+    "L": [1.0, 1.0], "m": [1.0, 1.0], "r": [1.0, 1.0], "I": [0.0, 0.0], "g": 9.81
+  },
+  "arm_exo_2r": {
+    "description": "Sagittal-plane shoulder-flexion / elbow-flexion arm + exoskeleton (upper arm + cuff, forearm + hand + cuff), illustrative values",
+    "L": [0.30, 0.35], "m": [2.6, 2.0], "r": [0.13, 0.17], "I": [0.025, 0.020], "g": 9.81
+  },
+  "eod_3r": {
+    "description": "Vertical-plane shoulder / elbow / wrist-pitch arm of a tracked EOD robot; link 3 = wrist + gripper + 2 kg suspect package, illustrative values",
+    "L": [0.60, 0.50, 0.15], "m": [8.0, 5.0, 3.5], "r": [0.30, 0.25, 0.10], "I": [0.24, 0.10, 0.008], "g": 9.81
+  }
+}

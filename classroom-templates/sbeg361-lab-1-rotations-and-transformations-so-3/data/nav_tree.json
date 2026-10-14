@@ -1,0 +1,80 @@
+{
+  "description": "Optical surgical navigation for pedicle-screw insertion (illustrative values). Edges store T_parent_child; quaternions are tf2 order (x, y, z, w); metres.",
+  "transforms": [
+    {
+      "parent": "theatre",
+      "child": "tracker",
+      "translation": [
+        1.2,
+        -0.8,
+        2.1
+      ],
+      "rotation_xyzw": [
+        0.23456971601,
+        0.875426098066,
+        -0.408217893677,
+        -0.109381654947
+      ]
+    },
+    {
+      "parent": "tracker",
+      "child": "patient_ref",
+      "translation": [
+        1.229422863,
+        1.0160956,
+        0.422574436
+      ],
+      "rotation_xyzw": [
+        0.309975519219,
+        0.851650739639,
+        -0.397131261967,
+        0.144543958453
+      ]
+    },
+    {
+      "parent": "patient_ref",
+      "child": "ct_image",
+      "translation": [
+        -0.12,
+        0.05,
+        -0.18
+      ],
+      "rotation_xyzw": [
+        0.999048221582,
+        -0.043619387365,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "parent": "ct_image",
+      "child": "plan_entry",
+      "translation": [
+        0.142,
+        0.085,
+        0.21
+      ],
+      "rotation_xyzw": [
+        0.979719238074,
+        0.020085404283,
+        0.150508970345,
+        0.13074341639
+      ]
+    },
+    {
+      "parent": "tool_marker",
+      "child": "tool_tip",
+      "translation": [
+        0.05,
+        0.0,
+        -0.25
+      ],
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}

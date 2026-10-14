@@ -1,0 +1,54 @@
+{
+  "_comment": "Safety-filter enrichment lab, rehab_2r (horizontal plane). Illustrative values. Units: SI (m, s, kg, N).",
+  "common": {
+    "dt": 0.001,
+    "T_move": 2.0,
+    "t_end": 3.0,
+    "p_A": [
+      0.2,
+      0.4
+    ],
+    "p_B": [
+      -0.2,
+      0.5
+    ],
+    "Kp": 100.0,
+    "Kd": 20.0,
+    "r_keepout": 0.06,
+    "alpha1": 2.0,
+    "alpha2": 10.0,
+    "gamma": 10.0,
+    "v_max": 0.2,
+    "m_H": 2.0,
+    "k_contact": 5000.0,
+    "F_max": 12.0
+  },
+  "scenarios": {
+    "static": {
+      "_comment": "Therapist's hand resting on the table next to the reaching path.",
+      "person_p0": [
+        0.01,
+        0.48
+      ],
+      "person_p1": [
+        0.01,
+        0.48
+      ],
+      "person_t0": 0.0,
+      "person_t1": 1.0
+    },
+    "approaching": {
+      "_comment": "Therapist's hand moves about 0.12 m towards the path between t = 0.4 s and t = 1.2 s.",
+      "person_p0": [
+        0.06,
+        0.6
+      ],
+      "person_p1": [
+        0.01,
+        0.485
+      ],
+      "person_t0": 0.4,
+      "person_t1": 1.2
+    }
+  }
+}

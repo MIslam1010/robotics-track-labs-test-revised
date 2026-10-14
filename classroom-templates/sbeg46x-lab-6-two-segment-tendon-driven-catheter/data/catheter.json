@@ -1,0 +1,59 @@
+{
+  "description": "Two-segment tendon-driven steerable ablation catheter, 8 Fr (illustrative values)",
+  "ell": [
+    0.04,
+    0.025
+  ],
+  "d": [
+    0.001,
+    0.001
+  ],
+  "sigma_deg": [
+    [
+      0.0,
+      120.0,
+      240.0
+    ],
+    [
+      60.0,
+      180.0,
+      300.0
+    ]
+  ],
+  "EI": [
+    0.0001,
+    6e-05
+  ],
+  "theta_max": 2.617994,
+  "z_range": [
+    0.0,
+    0.03
+  ],
+  "T_base": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.02
+    ],
+    [
+      0.0,
+      0.866025403784,
+      0.5,
+      0.0
+    ],
+    [
+      0.0,
+      -0.5,
+      0.866025403784,
+      0.015
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "m, rad, N m^2; sigma in degrees in the cross-section frame; T_base = sheath exit in the atrium frame"
+}

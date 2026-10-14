@@ -1,0 +1,6 @@
+{
+  "name": "sbeg461-labs",
+  "build": {"dockerfile": "../Dockerfile"},
+  "postCreateCommand": "pip install -e library && python check_env.py",
+  "customizations": {"vscode": {"extensions": ["ms-python.python", "ms-toolsai.jupyter", "ms-vscode.cpptools", "ms-vscode.cmake-tools"]}}
+}

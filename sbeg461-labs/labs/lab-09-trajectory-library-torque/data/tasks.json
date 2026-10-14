@@ -1,0 +1,57 @@
+{
+ "description": "Course-arm tasks for Lab 9, Parts A-C (illustrative). Biomedical: move a 0.25 kg sample carrier from the ready pose to a centrifuge rack (A -> B), via a waypoint above a tray (A -> W -> B). Defence (protective): the same arm on an EOD training rig lifts a 0.25 kg inert mock package (A -> C). Short move A -> D: dip the forearm 0.1 rad at joints 2 and 3 to seat a sample tube.",
+ "A": [
+  0.0,
+  -0.6,
+  1.4,
+  -2.4,
+  -1.57,
+  0.0
+ ],
+ "B": [
+  1.2,
+  -1.2,
+  1.0,
+  -1.4,
+  -1.57,
+  0.8
+ ],
+ "C": [
+  -0.8,
+  0.2,
+  0.6,
+  -2.3,
+  -1.2,
+  -0.4
+ ],
+ "D": [
+  0.0,
+  -0.7,
+  1.3,
+  -2.4,
+  -1.57,
+  0.0
+ ],
+ "W": [
+  0.6,
+  -1.4,
+  1.6,
+  -1.8,
+  -1.57,
+  0.4
+ ],
+ "via_times": [
+  0.0,
+  1.2,
+  2.4
+ ],
+ "qddot_lim": [
+  4.0,
+  4.0,
+  4.0,
+  4.0,
+  4.0,
+  4.0
+ ],
+ "payload_kg": 0.25
+}

@@ -1,0 +1,289 @@
+[
+ {
+  "name": "sbeg361-hardware-rotation-1-fk-validation-on-the",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/hw-rotation-1-fk-validation-on-the",
+  "tests": "ci/c50-tests/361/hw-rotation-1.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-0-environment-git-modern-robotics-and",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-00-environment-git-modern-robotics-and",
+  "tests": "ci/c50-tests/361/lab00.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-1-rotations-and-transformations-so-3",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-01-rotations-and-transformations-so-3",
+  "tests": "ci/c50-tests/361/lab01.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-10-resolved-rate-control-and-ik-near",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-10-resolved-rate-control-and-ik-near",
+  "tests": "ci/c50-tests/361/lab10.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-2-angular-velocities-and-twists-space",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-02-angular-velocities-and-twists-space",
+  "tests": "ci/c50-tests/361/lab02.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-3-exponential-coordinates-and",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-03-exponential-coordinates-and",
+  "tests": "ci/c50-tests/361/lab03.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-4-force-torque-sensor-frame-change-for",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-04-force-torque-sensor-frame-change-for",
+  "tests": "ci/c50-tests/361/lab04.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-5-forward-kinematics-of-the-course-arm",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-05-forward-kinematics-of-the-course-arm",
+  "tests": "ci/c50-tests/361/lab05.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-6-dh-models-in-the-robotics-toolbox-vs",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-06-dh-models-in-the-robotics-toolbox-vs",
+  "tests": "ci/c50-tests/361/lab06.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-7-jacobian-implementation-and-finite",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-07-jacobian-implementation-and-finite",
+  "tests": "ci/c50-tests/361/lab07.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-8-manipulability-maps-of-an-assistive",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-08-manipulability-maps-of-an-assistive",
+  "tests": "ci/c50-tests/361/lab08.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-lab-9-analytic-and-numerical-ik-of-the",
+  "kind": "lab",
+  "sol": "solutions/sbeg361-labs/labs/lab-09-analytic-and-numerical-ik-of-the",
+  "tests": "ci/c50-tests/361/lab09.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg361-library",
+  "kind": "library",
+  "sol": "",
+  "tests": "ci/c50-tests/361/library.json",
+  "cpp": false
+ },
+ {
+  "name": "sbeg461-enrichment-dynamic-parameter",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/enrichment/dynamic-parameter",
+  "tests": "ci/c50-tests/461/enrich-param-id.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-enrichment-safety-critical-control-with",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/enrichment/safety-critical-control-with",
+  "tests": "ci/c50-tests/461/enrich-safety-cbf.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-hardware-rotation-1-joint-control-on-the",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/hw-rotation-1-joint-control-on-the",
+  "tests": "ci/c50-tests/461/hw-rotation-1.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-1-lagrangian-dynamics-in-sympy-vs",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-01-lagrangian-dynamics-in-sympy-vs",
+  "tests": "ci/c50-tests/461/lab01.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-10-grid-planner-for-a-2r-arm-among",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-10-grid-planner-for-a-2r-arm-among",
+  "tests": "ci/c50-tests/461/lab10.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-11-rrt-for-the-course-arm-path",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-11-rrt-for-the-course-arm-path",
+  "tests": "ci/c50-tests/461/lab11.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-2-implement-the-rnea-verify-against",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-02-implement-the-rnea-verify-against",
+  "tests": "ci/c50-tests/461/lab02.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-3-forward-dynamics-simulator-and",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-03-forward-dynamics-simulator-and",
+  "tests": "ci/c50-tests/461/lab03.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-4-urdf-dynamics-c-rnea-vs-python",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-04-urdf-dynamics-c-rnea-vs-python",
+  "tests": "ci/c50-tests/461/lab04.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-5-joint-pid-in-simulation-a-ros-2",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-05-joint-pid-in-simulation-a-ros-2",
+  "tests": "ci/c50-tests/461/lab05.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-6-computed-torque-vs-pid-with-model",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-06-computed-torque-vs-pid-with-model",
+  "tests": "ci/c50-tests/461/lab06.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-7-lyapunov-and-lqr-energy-based",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-07-lyapunov-and-lqr-energy-based",
+  "tests": "ci/c50-tests/461/lab07.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-8-impedance-control-on-a-hapkit-type",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-08-impedance-control-on-a-hapkit-type",
+  "tests": "ci/c50-tests/461/lab08.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-lab-9-trajectory-library-torque",
+  "kind": "lab",
+  "sol": "solutions/sbeg461-labs/labs/lab-09-trajectory-library-torque",
+  "tests": "ci/c50-tests/461/lab09.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg461-library",
+  "kind": "library",
+  "sol": "",
+  "tests": "ci/c50-tests/461/library.json",
+  "cpp": false
+ },
+ {
+  "name": "sbeg46x-hardware-rotation-1-project-safety",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/hw-rotation-1-project-safety",
+  "tests": "ci/c50-tests/46X/hw-rotation-1.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-1-software-remote-centre-of-motion",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-01-software-remote-centre-of-motion",
+  "tests": "ci/c50-tests/46X/lab01.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-10-cbf-qp-safety-filter-versus",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-10-cbf-qp-safety-filter-versus",
+  "tests": "ci/c50-tests/46X/lab10.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-11-image-based-visual-servoing-of-an",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-11-image-based-visual-servoing-of-an",
+  "tests": "ci/c50-tests/46X/lab11.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-2-teleoperation-with-a-hapkit-leader",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-02-teleoperation-with-a-hapkit-leader",
+  "tests": "ci/c50-tests/46X/lab02.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-3-delayed-bilateral-teleoperation",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-03-delayed-bilateral-teleoperation",
+  "tests": "ci/c50-tests/46X/lab03.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-4-haptic-rendering-on-the-hapkit",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-04-haptic-rendering-on-the-hapkit",
+  "tests": "ci/c50-tests/46X/lab04.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-5-navigation-pipeline-pivot",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-05-navigation-pipeline-pivot",
+  "tests": "ci/c50-tests/46X/lab05.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-6-two-segment-tendon-driven-catheter",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-06-two-segment-tendon-driven-catheter",
+  "tests": "ci/c50-tests/46X/lab06.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-7-cosserat-rod-catheter-shooting-and",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-07-cosserat-rod-catheter-shooting-and",
+  "tests": "ci/c50-tests/46X/lab07.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-8-pd-vs-lqr-vs-mpc-on-an-exoskeleton",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-08-pd-vs-lqr-vs-mpc-on-an-exoskeleton",
+  "tests": "ci/c50-tests/46X/lab08.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-lab-9-imu-orientation-fusion-for-an",
+  "kind": "lab",
+  "sol": "solutions/sbeg46x-labs/labs/lab-09-imu-orientation-fusion-for-an",
+  "tests": "ci/c50-tests/46X/lab09.json",
+  "cpp": true
+ },
+ {
+  "name": "sbeg46x-library",
+  "kind": "library",
+  "sol": "",
+  "tests": "ci/c50-tests/46X/library.json",
+  "cpp": false
+ }
+]

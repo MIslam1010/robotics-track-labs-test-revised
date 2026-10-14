@@ -1,0 +1,5 @@
+python
+
+# Which track do you want auto-graded?  First line: python (default) or cpp.
+# cpp: the auto-grader builds cpp/ (your starter.cpp) with CMake and runs its doctest checks instead of the pytest
+# checks; the score is the share of C++ test cases that pass.

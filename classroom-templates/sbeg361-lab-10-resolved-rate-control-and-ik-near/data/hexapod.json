@@ -1,0 +1,81 @@
+{
+ "name": "Radiotherapy couch hexapod (6-UPS), illustrative values",
+ "description": "{s} at the centre of the base joint circle (z up), {b} at the centre of the platform joint circle; at home R = I and p = (0, 0, h0). Leg i joins base point a_i (in {s}) to platform point b_i (in {b}). Base joints at 0, 120, 240 deg +/- half_a; platform joints at -60/60/180 deg +/- (60 - half_b).",
+ "params": {
+  "r_a": 0.3,
+  "r_b": 0.2,
+  "half_a": 10.0,
+  "half_b": 20.0,
+  "h0": 0.25
+ },
+ "a": [
+  [
+   0.295442,
+   -0.052094,
+   0.0
+  ],
+  [
+   0.295442,
+   0.052094,
+   0.0
+  ],
+  [
+   -0.102606,
+   0.281908,
+   0.0
+  ],
+  [
+   -0.192836,
+   0.229813,
+   0.0
+  ],
+  [
+   -0.192836,
+   -0.229813,
+   0.0
+  ],
+  [
+   -0.102606,
+   -0.281908,
+   0.0
+  ]
+ ],
+ "b": [
+  [
+   0.153209,
+   -0.128558,
+   0.0
+  ],
+  [
+   0.153209,
+   0.128558,
+   0.0
+  ],
+  [
+   0.03473,
+   0.196962,
+   0.0
+  ],
+  [
+   -0.187939,
+   0.068404,
+   0.0
+  ],
+  [
+   -0.187939,
+   -0.068404,
+   0.0
+  ],
+  [
+   0.03473,
+   -0.196962,
+   0.0
+  ]
+ ],
+ "stroke": [
+  0.2,
+  0.32
+ ],
+ "leg_speed_max": 0.01,
+ "rated_leg_force": 1500.0
+}
